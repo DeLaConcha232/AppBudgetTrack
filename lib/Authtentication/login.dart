@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sqlite_flutter_crud/Authtentication/signup.dart';
 import 'package:sqlite_flutter_crud/JsonModels/users.dart';
 import 'package:sqlite_flutter_crud/SQLite/sqlite.dart';
-import 'package:sqlite_flutter_crud/Views/notes.dart';
+import 'package:sqlite_flutter_crud/mainPage.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
       //If login is correct, then goto notes
       if (!mounted) return;
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const Notes()));
+          context, MaterialPageRoute(builder: (context) => const MainPage()));
     } else {
       //If not, true the bool value to show error message
       setState(() {
@@ -61,8 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   //Before we show the image, after we copied the image we need to define the location in pubspec.yaml
                   Image.asset(
-                    "lib/assets/login.png",
-                    width: 210,
+                    "assets/images/logotipo.png",
+                    width: 300,
                   ),
                   const SizedBox(height: 15),
                   Container(
@@ -71,7 +71,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Colors.deepPurple.withOpacity(.2)),
+                        color: const Color.fromARGB(255, 32, 57, 154)
+                            .withOpacity(.2)),
                     child: TextFormField(
                       controller: username,
                       validator: (value) {
@@ -95,7 +96,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Colors.deepPurple.withOpacity(.2)),
+                        color: const Color.fromARGB(255, 32, 57, 154)
+                            .withOpacity(.2)),
                     child: TextFormField(
                       controller: password,
                       validator: (value) {
@@ -130,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: MediaQuery.of(context).size.width * .9,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Colors.deepPurple),
+                        color: const Color.fromARGB(255, 32, 57, 154)),
                     child: TextButton(
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
@@ -160,7 +162,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                 MaterialPageRoute(
                                     builder: (context) => const SignUp()));
                           },
-                          child: const Text("SIGN UP"))
+                          child: const Text(
+                            "SIGN UP",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 32, 57, 154)),
+                          ))
                     ],
                   ),
 
