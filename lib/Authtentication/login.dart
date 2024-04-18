@@ -71,8 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: const Color.fromARGB(255, 32, 57, 154)
-                            .withOpacity(.2)),
+                        color: const Color.fromARGB(255, 32, 57, 154).withOpacity(.2)),
                     child: TextFormField(
                       controller: username,
                       validator: (value) {

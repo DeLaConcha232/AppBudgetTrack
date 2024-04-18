@@ -45,12 +45,12 @@ class _SignUpState extends State<SignUp> {
                   //As we assigned our controller to the textformfields
 
                   Container(
-                    margin: EdgeInsets.all(8),
+                    margin:const EdgeInsets.all(8),
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Colors.deepPurple.withOpacity(.2)),
+                        color: const Color.fromARGB(255, 32, 57, 154).withOpacity(.2)),
                     child: TextFormField(
                       controller: username,
                       validator: (value) {
@@ -74,7 +74,7 @@ class _SignUpState extends State<SignUp> {
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Colors.deepPurple.withOpacity(.2)),
+                        color: const Color.fromARGB(255, 32, 57, 154).withOpacity(.2)),
                     child: TextFormField(
                       controller: password,
                       validator: (value) {
@@ -110,7 +110,7 @@ class _SignUpState extends State<SignUp> {
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Colors.deepPurple.withOpacity(.2)),
+                        color: const Color.fromARGB(255, 32, 57, 154).withOpacity(.2)),
                     child: TextFormField(
                       controller: confirmPassword,
                       validator: (value) {
@@ -147,7 +147,7 @@ class _SignUpState extends State<SignUp> {
                     width: MediaQuery.of(context).size.width * .9,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Colors.deepPurple),
+                        color: const Color.fromARGB(255, 32, 57, 154)),
                     child: TextButton(
                         onPressed: () {
                           if (formKey.currentState!.validate()) {

@@ -34,29 +34,15 @@ _buildTopSection(BuildContext context) {
     title:const DefaultTextStyle(
       style: TextStyle(
         fontSize: 25,
-        color: Color.fromARGB(255, 0, 0, 0),
+        color: Color.fromARGB(255, 253, 253, 253),
         fontWeight: FontWeight.bold,
         fontFamily: 'Times New Roman',
       ),
       child: Text('BUDGETTRACK'),
     ),
     centerTitle: true,
-    backgroundColor: Colors.blue,
+    backgroundColor: const Color.fromARGB(255, 32, 57, 154),
   );
-  //const Column(
-  //   crossAxisAlignment: CrossAxisAlignment.start,
-
-  //   children: [
-  //     Text(
-  //       'Configuración',
-  //       style: TextStyle(
-  //           fontSize: 40,
-  //           color: Color.fromARGB(255, 0, 0, 0),
-  //           fontWeight: FontWeight.bold,
-  //           fontFamily: 'Times New Roman'),
-  //     ),
-  //   ],
-  // );
 }
 
 Widget _buildMiddleSection() {

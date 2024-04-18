@@ -29,20 +29,6 @@ class MainPage extends StatelessWidget {
       body: Column(
         children: [
           Image.asset('assets/images/logotipo.png', width: 300, height: 300),
-          // Html(
-          //   data: """
-          //     <div>
-          //       <h1>Demo</h1>
-          //       <p>This is a fantastic product that you should buy!</p>
-          //       <h3>Features</h3>
-          //       <ul>
-          //         <li>It actually works</li>
-          //         <li>It exists</li>
-          //         <li>It doesn't cost much!</li>
-          //       </ul>
-          //     </div>
-          //   """,
-          // ),
           Expanded(
             child: ListView.builder(
               itemCount: productos.length,
@@ -67,6 +53,12 @@ class MainPage extends StatelessWidget {
             child: const Text('Intelligent Performance', style: TextStyle(fontSize: 15)),
           ),
           ),
+          // const HtmlWidget ("""
+          //   <div>
+          //     <h1>Intelligent Performance</h1>
+          //     <p>Intelligent Performance is a new way to think about the performance of your applications. It is a way to make your applications run faster and more efficiently. It is a way to make your applications more reliable and more secure. It is a way to make your applications more scalable and more flexible </p>
+          //   </div>
+          //   """),
           const SizedBox(height: 200),
         ],
       ),
@@ -88,7 +80,7 @@ class MainPage extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Image.asset('assets/images/logo-Gastos.png',
+              leading: Image.asset('assets/images/saldo-de-gastos.png',
                   width: 50, height: 50),
               title: const Text('Saldo'),
               onTap: () {
@@ -101,7 +93,7 @@ class MainPage extends StatelessWidget {
                   style: TextStyle(fontSize: 10)),
             ),
             ListTile(
-              leading: Image.asset('assets/images/gastos.png',
+              leading: Image.asset('assets/images/gastos_negro.png',
                   width: 50, height: 50),
               title: const Text('Gastos'),
               onTap: () {
@@ -114,7 +106,7 @@ class MainPage extends StatelessWidget {
                   style: TextStyle(fontSize: 10)),
             ),
             ListTile(
-              leading: Image.asset('assets/images/perfil.png',
+              leading: Image.asset('assets/images/perfil-negro.png',
                   width: 50, height: 50),
               title: const Text('Perfil'),
               onTap: () {
@@ -127,7 +119,7 @@ class MainPage extends StatelessWidget {
                   const Text('Usuario, Correo', style: TextStyle(fontSize: 10)),
             ),
             ListTile(
-              leading: Image.asset('assets/images/configuraciones.png',
+              leading: Image.asset('assets/images/config.png',
                   width: 50, height: 50),
               title: const Text('Configuracion'),
               onTap: () {

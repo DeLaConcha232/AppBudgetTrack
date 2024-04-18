@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Budget extends StatelessWidget {
+class Budget extends StatefulWidget {
   const Budget({super.key});
+
+  @override
+  BudgetPageState createState() => BudgetPageState();
+}
+
+class BudgetPageState extends State<Budget> {
+  String budget = '\$0.00'; // Valor inicial del presupuesto
+  final TextEditingController controller = TextEditingController(); // Controlador para el TextField
 
   @override
   Widget build(BuildContext context) {
@@ -9,14 +17,13 @@ class Budget extends StatelessWidget {
       appBar: AppBar(
         title: const Text('BUDGETTRACK',
             style: TextStyle(
-                fontSize: 25,
                 color: Color.fromARGB(255, 32, 57, 154),
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
                 fontFamily: 'Times New Roman')),
         actions: <Widget>[
           Padding(
-            padding:const EdgeInsets.only(right: 20.0, top: 10.0),
+            padding: const EdgeInsets.only(right: 20.0, top: 10.0),
             child: GestureDetector(
               onTap: () {},
               child: Image.asset('assets/images/perfil.png',
@@ -42,32 +49,48 @@ class Budget extends StatelessWidget {
             const SizedBox(
                 height: 20), // Espacio entre el título y la cifra de dinero
             Container(
-              padding:
-                  const EdgeInsets.all(10.0), // Espacio entre el borde y el texto
+              padding: const EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.black,width: 2), // Borde negro de 2 píxeles de ancho
+                border: Border.all(color: Colors.black, width: 2),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child:const Text(
-                '\$1000.00', // Cifra de dinero
-                style: TextStyle(
-                  fontSize: 30, // Tamaño de fuente
+              child: Text(
+                budget,
+                style: const TextStyle(
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            const SizedBox(height: 50), // Espacio entre la cifra de dinero y el botón
-            SizedBox(
-              height: 50.0, // Altura del botón
-              width: 200, // Ancho del botón
-              child: ElevatedButton(
-                onPressed: () {
-                  // Código para modificar el valor del texto
-                },
-                child:const Text('Change Budget'),
-              ),
+            const SizedBox(height: 20), // Espacio entre el presupuesto y el botón
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text('Change Budget'),
+                      content: TextField(
+                        controller: controller,
+                        keyboardType: TextInputType.number,
+                      ),
+                      actions: [
+                        TextButton(
+                          child: const Text('OK'),
+                          onPressed: () {
+                            setState(() {
+                              budget = '\$${controller.text}';
+                            });
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: const Text('Change Budget'),
             ),
-            const SizedBox(height: 20), // Espacio en la parte inferior
           ],
         ),
       ),
